@@ -2,11 +2,11 @@
 from setuptools import setup
 
 setup(name='lintools',
-      version='06.2017',
+      version='06.2018',
       description='Illustrates protein-ligand interactions',
-      url='https://github.com/ldomic/lintools.git',
-      author='Laura Domicevica',
-      author_email='ldomicevica@gmail.com',
+      url='https://github.com/bigginlab/lintools.git',
+      author='Phil Biggin and Laura Domicevica',
+      author_email='philip.biggin@bioch.ox.ac.uk',
       license='GPL',
       packages=['lintools','lintools.analysis'],
       entry_points={
