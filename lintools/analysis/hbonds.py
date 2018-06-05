@@ -204,19 +204,19 @@ class HBonds(object):
         os.chdir("hydrogen_bonds")
         for traj in range(len(self.trajectory)):
             with open('hbonds_data_total_'+str(traj)+'.csv', 'wb') as outfile:
-                hwriter = csv.writer(outfile, delimiter=' ')
+                hwriter = csv.writer(outfile, delimiter=',')
                 for time in self.hbonds_by_time[traj]:
                     hwriter.writerow([time[0],time[1]])
             for bond in self.hbonds_by_type[traj]:
                 if bond["donor_resnm"]=="LIG" and (bond["acceptor_idx"],bond["donor_idx"]) in [(k[0],k[3]) for k,v in self.hbonds_for_drawing.items()]:
                     with open('hbond_'+bond["acceptor_resnm"]+"_"+str(bond["acceptor_resid"])+"_"+bond["donor_atom"]+"_"+str(traj)+".csv","wb") as outfile:
-                        hwriter = csv.writer(outfile, delimiter=' ')
+                        hwriter = csv.writer(outfile, delimiter=',')
                         for time in self.hbonds_timesteps[traj]:
                             result = [1 if x[0]==time and x["acceptor_idx"]==bond["acceptor_idx"] else 0 for x in self.hbonds[traj]][0]
                             hwriter.writerow([time,result])
                 if bond["donor_resnm"]!="LIG" and (bond["donor_idx"],bond["acceptor_idx"]) in [(k[0],k[3]) for k,v in self.hbonds_for_drawing.items()]:
                     with open('hbond_'+bond["donor_resnm"]+"_"+str(bond["donor_resid"])+"_"+bond["acceptor_atom"]+"_"+str(traj)+".csv","wb") as outfile:
-                        hwriter = csv.writer(outfile, delimiter=' ')
+                        hwriter = csv.writer(outfile, delimiter=',')
                         for time in self.hbonds_timesteps[traj]:
                             result = [1 if x[0]==time and x["donor_idx"]==bond["donor_idx"] else 0 for x in self.hbonds[traj]][0]
                             hwriter.writerow([time,result])
