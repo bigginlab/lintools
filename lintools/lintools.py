@@ -1,3 +1,4 @@
+
 from argparse import ArgumentParser
 import os
 import shutil
@@ -177,12 +178,15 @@ if __name__ == '__main__':
     parser.add_argument('-cfg', '--config', dest = 'config', default=None, help='Configuration file')
     parser.add_argument('-t', '--topology', dest = 'topology', default=None, help='Topology file')
     parser.add_argument('-x', '--trajectory', dest = "trajectory", nargs="*", default=[], help='Trajectory file(s)')
+    parser.add_argument('-b', '--start', dest = "start_frame", nargs="*", default=[None], help='Trajectory frame to start at - as many start points as there are trajectories')
+    parser.add_argument('-e', '--end', dest = "end_frame", nargs="*", default=[None], help='Trajectory frame to end at - as many start points as there are trajectories')
+    parser.add_argument('-s', '--skip', dest = "skip", nargs="*", default=[None], help='Trajectory frame skipping rate - as many start points as there are trajectories')
     parser.add_argument('-o', '--outname', dest = "output_name", help='Name for output folder and file')
     parser.add_argument('-c', '--cutoff', dest = "cutoff", default = 3.5, help='Cutoff distance in angstroms.')
     parser.add_argument('-ac', '--analysis_cutoff', dest = "analysis_cutoff", default=0.3, help='Analysis cutoff - a feature has to appear for at least a fraction of the simulation to be plotted.')
 
     args = parser.parse_args()
-
+    
     ####################################################################################################################
 
 
@@ -272,7 +276,7 @@ if __name__ == '__main__':
         ligand_name = find_ligand_name()
         diagram_type = find_diagram_type()
 
-        lintools = Lintools(args.topology,args.trajectory,None,ligand_name,0,args.cutoff,[None],[None],[None],float(args.analysis_cutoff),diagram_type,args.output_name,cfg=False)
+        lintools = Lintools(args.topology,args.trajectory,None,ligand_name,0,args.cutoff,args.start_frame,args.end_frame,args.skip,float(args.analysis_cutoff),diagram_type,args.output_name,cfg=False)
         lintools.save_files()
         lintools.data_input_and_res_time_analysis()
         lintools.analysis_of_prot_lig_interactions()
