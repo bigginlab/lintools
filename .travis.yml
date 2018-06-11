@@ -13,7 +13,7 @@ install:
   - conda create --yes -q -c https://conda.anaconda.org/rdkit -n my-rdkit-env rdkit==2016.03.4 python=2.7
   - source activate my-rdkit-env
   - conda install -y -n my-rdkit-env python=2.7 numpy  cython nose matplotlib geos shapely scipy 
-  - conda install -c omnia openbabel=2015.09-py27_1
+  - conda install -c omnia openbabel=2015.09
   - pip install MDAnalysis==0.16.0  coveralls mdtraj
   - wget http://pyyaml.org/download/pyyaml/PyYAML-3.12.tar.gz
   - tar -zxvf PyYAML-3.12.tar.gz
