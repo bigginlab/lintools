@@ -38,7 +38,7 @@
 <text x='773.404' y='139.021' style='font-size:15px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:sans-serif;text-anchor:start;fill:#FF0000' ><tspan>OH</tspan></text>
 <text x='718.818' y='373.252' style='font-size:15px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:sans-serif;text-anchor:start;fill:#FF0000' ><tspan>OH</tspan></text>
 </g>
-<g id='727' class='HBonds' transform='translate(300,322.211039613)' x='300' y='322.211039613'>'<line id='727' class='HBonds' x1='704' y1='-86' x2='786.91' y2='131.521' style='stroke:white;stroke-width:15' /><line id='727' class='HBonds' x1='704' y1='-86' x2='786.91' y2='131.521' style='stroke:black;stroke-width:4' /></g> <g  id='ALA117_A' class='residue' transform='translate(914,146 )' x='914' y='146'>
+<g id='726' class='HBonds' transform='translate(300,322.211039613)' x='300' y='322.211039613'>'<line id='726' class='HBonds' x1='704' y1='-86' x2='786.91' y2='131.521' style='stroke:white;stroke-width:15' /><line id='726' class='HBonds' x1='704' y1='-86' x2='786.91' y2='131.521' style='stroke:black;stroke-width:4' /></g> <g  id='ALA117_A' class='residue' transform='translate(914,146 )' x='914' y='146'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 

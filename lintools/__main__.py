@@ -21,6 +21,7 @@ def main(args=None):
     parser.add_argument('-o', '--outname', dest = "output_name", help='Name for output folder and file')
     parser.add_argument('-c', '--cutoff', dest = "cutoff", default = 3.5, help='Cutoff distance in angstroms.')
     parser.add_argument('-ac', '--analysis_cutoff', dest = "analysis_cutoff", default=0.3, help='Analysis cutoff - a feature has to appear for at least a fraction of the simulation to be plotted.')
+    parser.add_argument('-sasa', '--sasa', dest = "sasa", default = 0, help='Perform solvent accessible surface area (sasa) calculation')
 
     args = parser.parse_args()
 
@@ -41,7 +42,7 @@ def main(args=None):
             cfg = yaml.load(ymlfile)
         ## Check config file input - mainly topology and output file, also handling bad input
 
-        lintools = Lintools(cfg['input']['topology'],cfg['input']['trajectory'],cfg['input']['mol file'],cfg['input']['ligand'],cfg['input']['offset'],float(cfg['input']['distance cutoff']),cfg['input']['traj start'],cfg['input']['traj end'],cfg['input']['traj skip'],cfg['input']['analysis cutoff'],cfg['input']['diagram type'],cfg['input']['output name'],cfg=True)
+        lintools = Lintools(cfg['input']['topology'],cfg['input']['trajectory'],cfg['input']['mol file'],cfg['input']['ligand'],cfg['input']['offset'],float(cfg['input']['distance cutoff']),cfg['input']['traj start'],cfg['input']['traj end'],cfg['input']['traj skip'],cfg['input']['analysis cutoff'],cfg['input']['sasa'],cfg['input']['diagram type'],cfg['input']['output name'],cfg=True)
         lintools.save_files()
         lintools.data_input_and_res_time_analysis()
         lintools.analysis_of_prot_lig_interactions()
@@ -113,7 +114,7 @@ def main(args=None):
         ligand_name = find_ligand_name()
         diagram_type = find_diagram_type()
 
-        lintools = Lintools(args.topology,args.trajectory,None,ligand_name,0,args.cutoff,args.start_frame,args.end_frame,args.skip,float(args.analysis_cutoff),diagram_type,args.output_name,cfg=False)
+        lintools = Lintools(args.topology,args.trajectory,None,ligand_name,0,args.cutoff,args.start_frame,args.end_frame,args.skip,float(args.analysis_cutoff),args.sasa,diagram_type,args.output_name,cfg=False)
         lintools.save_files()
         lintools.data_input_and_res_time_analysis()
         lintools.analysis_of_prot_lig_interactions()
