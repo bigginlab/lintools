@@ -61,7 +61,7 @@
 <path d='M 414.702,156.472 476.384,161.221' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />
 <text x='209.009' y='339.382' style='font-size:15px;font-style:normal;font-weight:normal;fill-opacity:1;stroke:none;font-family:sans-serif;text-anchor:start;fill:#0000FF' ><tspan>N</tspan></text>
 </g>
- <g  id='ILE340_SYSTEM' class='residue' transform='translate(805,135 )' x='805' y='135'>
+ <g  id='ILE310_SYSTEM' class='residue' transform='translate(805,135 )' x='805' y='135'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -115,12 +115,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(61.787813 79.121966)">ILE</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">340</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">310</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='LEU339_SYSTEM' class='residue' transform='translate(591,114 )' x='591' y='114'>
+ <g  id='LEU309_SYSTEM' class='residue' transform='translate(591,114 )' x='591' y='114'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -174,12 +174,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(53.867812 79.121966)">LEU</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">339</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">309</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='MET69_SYSTEM' class='residue' transform='translate(1052,316 )' x='1052' y='316'>
+ <g  id='MET39_SYSTEM' class='residue' transform='translate(1052,316 )' x='1052' y='316'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -233,12 +233,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(49.761563 79.121966)">MET</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(67.201875 119.434091)">69</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(67.201875 119.434091)">39</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='MET986_SYSTEM' class='residue' transform='translate(211,458 )' x='211' y='458'>
+ <g  id='MET956_SYSTEM' class='residue' transform='translate(211,458 )' x='211' y='458'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -292,12 +292,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(49.761563 79.121966)">MET</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">986</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">956</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='PHE336_SYSTEM' class='residue' transform='translate(448,184 )' x='448' y='184'>
+ <g  id='PHE306_SYSTEM' class='residue' transform='translate(448,184 )' x='448' y='184'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -351,12 +351,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(51.696562 79.121966)">PHE</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">336</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">306</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='PHE72_SYSTEM' class='residue' transform='translate(1070,852 )' x='1070' y='852'>
+ <g  id='PHE42_SYSTEM' class='residue' transform='translate(1070,852 )' x='1070' y='852'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -410,12 +410,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(51.696562 79.121966)">PHE</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(67.201875 119.434091)">72</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(67.201875 119.434091)">42</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='PHE978_SYSTEM' class='residue' transform='translate(789,891 )' x='789' y='891'>
+ <g  id='PHE948_SYSTEM' class='residue' transform='translate(789,891 )' x='789' y='891'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -469,12 +469,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(51.696562 79.121966)">PHE</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">978</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">948</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='PHE983_SYSTEM' class='residue' transform='translate(328,290 )' x='328' y='290'>
+ <g  id='PHE953_SYSTEM' class='residue' transform='translate(328,290 )' x='328' y='290'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -528,12 +528,12 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(51.696562 79.121966)">PHE</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">983</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">953</text>
    </g>
   </g>
  </g>
 </g>
- <g  id='TYR953_SYSTEM' class='residue' transform='translate(1108,466 )' x='1108' y='466'>
+ <g  id='TYR923_SYSTEM' class='residue' transform='translate(1108,466 )' x='1108' y='466'>
  <g id="figure_1">
   <g id="patch_1">
    <path d="M 0 180 
@@ -587,7 +587,7 @@ z
    <g id="matplotlib.axis_2"/>
    <g id="text_1">
     <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(53.0775 79.121966)">TYR</text>
-    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">953</text>
+    <text style="font-family:DejaVu Sans;font-size:36px;font-style:normal;font-weight:bold;font-weight:700;" transform="translate(54.677813 119.434091)">923</text>
    </g>
   </g>
  </g>

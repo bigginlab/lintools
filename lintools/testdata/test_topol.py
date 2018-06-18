@@ -6,13 +6,16 @@ import MDAnalysis
 from lintools.lintools import Lintools
 from lintools.testdata.datafiles import *
 
+
+# updated June 2018 - to remove offsets as not included in parser so test is not actually really complete - PCB ######
+
 ################ AMI in P-gp with -ro 30 #################
 
 class TestBasic1(TestCase):
     def setUp(self):
         self.test_svg = TEST1
         self.output_name = "test1_1"
-        self.lintools = Lintools(AMI_GRO,[],None,"resname UNK",30,3.5,[1],[None],[None],0.3,0,"amino",self.output_name,False)
+        self.lintools = Lintools(AMI_GRO,[],None,"resname UNK",0,3.5,[1],[None],[None],0.3,0,"amino",self.output_name,False)
         self.lintools.save_files()
         self.lintools.data_input_and_res_time_analysis()
     	self.lintools.analysis_of_prot_lig_interactions()
@@ -40,7 +43,7 @@ class TestBasic2(TestCase):
     def setUp(self):
         self.test_svg = TEST2
         self.output_name = "test2_1"
-        self.lintools = Lintools(AMI_GRO,[AMI_XTC],None,"resname UNK",30,3.5,[1],[None],[None],0.3,0,"clock",self.output_name,False)
+        self.lintools = Lintools(AMI_GRO,[AMI_XTC],None,"resname UNK",0,3.5,[1],[None],[None],0.3,0,"clock",self.output_name,False)
         self.lintools.save_files()
         self.lintools.data_input_and_res_time_analysis()
         self.lintools.analysis_of_prot_lig_interactions()
