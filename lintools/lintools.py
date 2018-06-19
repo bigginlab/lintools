@@ -1,4 +1,3 @@
-
 from argparse import ArgumentParser
 import os
 import shutil
@@ -169,7 +168,6 @@ class Lintools(object):
             if os.path.isfile(f)==True:
                 os.remove(f)
 
-
 if __name__ == '__main__':
 
     #################################################################################################################
@@ -188,8 +186,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     ####################################################################################################################
-
-
 
     if args.config!=None:
         #If config file exists, args.will be ignored
