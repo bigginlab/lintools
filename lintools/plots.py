@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from matplotlib import pylab
 import numpy
 
-
 class Plots(object):
     """
     This module plots the residue data.
