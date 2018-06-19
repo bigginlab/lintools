@@ -38,13 +38,12 @@ class Lintools(object):
         * end_frame * - end frame(s) for trajectory analysis (can be different for each trajectory)
         * skip * - number of frames to skip (can be different for each trajectory)
         * analysis_cutoff * - a fraction of time a residue has to fullfil the analysis parameters for (default - 0.3)
-        * sasa * - set this to 1 to turn on solvent accessible surface area calculation (currently only works across whole trajectory)
         * diagram_type * - string of the selected diagram type (e.g. "amino" or "clocks")
         * output_name * - name of the folder with results and the final SVG file
 
     """
-    __version__ = "06.2018"
-    def __init__(self,topology,trajectory,mol_file,ligand,offset,cutoff,start_frame,end_frame,skip,analysis_cutoff,sasa,diagram_type,output_name,cfg):
+    __version__ = "09.2016"
+    def __init__(self,topology,trajectory,mol_file,ligand,offset,cutoff,start_frame,end_frame,skip,analysis_cutoff,diagram_type,output_name,cfg):
         """Defines the input variables."""
         self.topology = os.path.abspath(topology)
         try:
@@ -69,7 +68,6 @@ class Lintools(object):
             self.end = end_frame
             self.skip = skip
         self.analysis_cutoff = analysis_cutoff
-        self.sasa = sasa
         self.diagram_type = diagram_type
         self.output_name = output_name
     def data_input_and_res_time_analysis(self):
@@ -93,17 +91,16 @@ class Lintools(object):
         """
         self.hbonds = HBonds(self.topol_data,self.trajectory,self.start,self.end,self.skip,self.analysis_cutoff,distance=3)
         self.pistacking = PiStacking(self.topol_data,self.trajectory,self.start,self.end,self.skip, self.analysis_cutoff)
-        if self.sasa==1:
-            self.sasa = SASA(self.topol_data,self.trajectory)
+        self.sasa = SASA(self.topol_data,self.trajectory)
         self.lig_descr = LigDescr(self.topol_data)
         if self.trajectory!=[]:
             self.rmsf = RMSF_measurements(self.topol_data,self.topology,self.trajectory,self.ligand,self.start,self.end,self.skip)
         self.salt_bridges = SaltBridges(self.topol_data,self.trajectory,self.lig_descr,self.start,self.end,self.skip,self.analysis_cutoff)
-    def plot_residues(self):
+    def plot_residues(self, colormap):
         """
         Calls Plot() that plots the residues with the required diagram_type.
         """
-        self.plots = Plots(self.topol_data,self.diagram_type)
+        self.plots = Plots(self.topol_data, self.diagram_type, colormap)
     def draw_figure(self,data_for_color=None, data_for_size=None, data_for_clouds=None, rot_bonds=None, color_for_clouds="Blues", color_type_color="viridis"):
         """
         Draws molecule through Molecule() and then puts the final figure together with
@@ -149,7 +146,6 @@ class Lintools(object):
                             'offset': self.offset,
                             'distance cutoff': self.cutoff,
                             'analysis cutoff': self.analysis_cutoff,
-                            'sasa': self.sasa,
                             'diagram type': self.diagram_type,
                             'output name': self.output_name},
                     'representation':{
@@ -188,7 +184,6 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--outname', dest = "output_name", help='Name for output folder and file')
     parser.add_argument('-c', '--cutoff', dest = "cutoff", default = 3.5, help='Cutoff distance in angstroms.')
     parser.add_argument('-ac', '--analysis_cutoff', dest = "analysis_cutoff", default=0.3, help='Analysis cutoff - a feature has to appear for at least a fraction of the simulation to be plotted.')
-    parser.add_argument('-sasa', '--sasa', dest = "sasa", default = 0, help='Perform solvent accessible surface area (sasa) calculation')
 
     args = parser.parse_args()
     
@@ -197,7 +192,7 @@ if __name__ == '__main__':
 
 
     if args.config!=None:
-        #If config file exists, args.will be ingnored
+        #If config file exists, args.will be ignored
         print "#####################################################################"
         print "WARNING"
         print "The arguments from command line will be ignored,"
@@ -209,7 +204,7 @@ if __name__ == '__main__':
             cfg = yaml.load(ymlfile)
         ## Check config file input - mainly topology and output file, also handling bad input
 
-        lintools = Lintools(cfg['input']['topology'],cfg['input']['trajectory'],cfg['input']['mol file'],cfg['input']['ligand'],cfg['input']['offset'],float(cfg['input']['distance cutoff']),cfg['input']['traj start'],cfg['input']['traj end'],cfg['input']['traj skip'],cfg['input']['analysis cutoff'],cfg['input']['sasa'],cfg['input']['diagram type'],cfg['input']['output name'],cfg=True)
+        lintools = Lintools(cfg['input']['topology'],cfg['input']['trajectory'],cfg['input']['mol file'],cfg['input']['ligand'],cfg['input']['offset'],float(cfg['input']['distance cutoff']),cfg['input']['traj start'],cfg['input']['traj end'],cfg['input']['traj skip'],cfg['input']['analysis cutoff'],cfg['input']['diagram type'],cfg['input']['output name'],cfg=True)
         lintools.save_files()
         lintools.data_input_and_res_time_analysis()
         lintools.analysis_of_prot_lig_interactions()
@@ -281,7 +276,7 @@ if __name__ == '__main__':
         ligand_name = find_ligand_name()
         diagram_type = find_diagram_type()
 
-        lintools = Lintools(args.topology,args.trajectory,None,ligand_name,0,args.cutoff,args.start_frame,args.end_frame,args.skip,float(args.analysis_cutoff),args.sasa,diagram_type,args.output_name,cfg=False)
+        lintools = Lintools(args.topology,args.trajectory,None,ligand_name,0,args.cutoff,args.start_frame,args.end_frame,args.skip,float(args.analysis_cutoff),diagram_type,args.output_name,cfg=False)
         lintools.save_files()
         lintools.data_input_and_res_time_analysis()
         lintools.analysis_of_prot_lig_interactions()

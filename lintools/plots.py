@@ -23,21 +23,28 @@ class Plots(object):
     """
     __version__ = "09.2016"
     matplotlib.rcParams['svg.fonttype'] = 'none'
-    matplotlib.rcParams['font.weight']=900
+    matplotlib.rcParams['font.weight'] = 900
     matplotlib.rcParams['text.usetex'] = False
     matplotlib.rcParams['patch.linewidth'] = 0
-    def __init__(self, topology_data_object,diagram_type,colormap='summer'):
+    def __init__(self, topology_data_object, diagram_type, colormap='summer'):
         self.topology_data = topology_data_object
-        self.colors_amino_acids = {"acidic":"#D9774B", "basic":"#889DCC",
-                                   "aromatic":"#9FC74A", "polar":"#D06AC1",
-                                   "hydrophobic":"#6AC297","lipids":"#ffff99",
-                                   "water":"turquoise","ions":"gold"}
-        self.amino_acids = {"ASP":"acidic","GLU":"acidic","LYS":"basic","ARG":"basic",
-                       "PHE":"aromatic","TYR":"aromatic","TRP":"aromatic","SER":"polar",
-                       "THR":"polar","ASN":"polar","GLN":"polar","CYS":"polar",
-                       "HIS":"polar","ALA":"hydrophobic","VAL":"hydrophobic",
-                       "ILE":"hydrophobic","LEU":"hydrophobic","MET":"hydrophobic","GLY":"hydrophobic","PRO":"hydrophobic",
-                       "PC":"lipids","HOH":"water","SOL":"water"}
+        self.colors_amino_acids = {"acidic": "#D9774B", "basic": "#889DCC",
+                                   "aromatic": "#9FC74A", "polar": "#D06AC1",
+                                   "hydrophobic": "#6AC297", 
+                                   "lipids": "#ffff99", "water": "turquoise",
+                                   "ions": "gold"}
+        self.amino_acids = {"ASP": "acidic","GLU": "acidic","LYS": "basic",
+                            "ARG": "basic", "PHE": "aromatic", 
+                            "TYR": "aromatic", "TRP": "aromatic", 
+                            "SER": "polar", "THR": "polar", "ASN": "polar",
+                            "GLN": "polar", "CYS": "polar", "HIS": "polar",
+                            "ALA": "hydrophobic", "VAL": "hydrophobic",
+                            "ILE": "hydrophobic", "LEU": "hydrophobic",
+                            "MET": "hydrophobic", "GLY": "hydrophobic", 
+                            "PRO": "hydrophobic", "PC": "lipids",
+                            "HOH": "water", "SOL": "water"}
+        # Let's try to fix this so that default config works
+        self.colormap = colormap
         if diagram_type == "amino":
             self.plot_amino_diagrams()
         if diagram_type == "domains":
